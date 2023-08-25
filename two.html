@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .sidenav{
+            height: 100%;
+            width: 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            padding-top: 60px;
+            overflow-x: hidden;
+            background-color: black;
+            transition: 0.5s;
+        }
+        .sidenav a{
+            font-size: 25px;
+            text-decoration: none;
+            padding: 8px 8px 8px 32px;
+            display: block;
+            color: #818181;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .sidenav a:hover{
+            color: #f1f1f1;
+        }
+        .sidenav .closebtn{
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+
+        }
+        #main{
+            padding: 16px;
+            transition: margin-left 0.5s;
+        }
+        @media screen and (max-height:450px){
+            .sidenav{padding-top: 15px;}
+            .sidenav a{font-size: 18px;}
+        }
+    </style>
+</head>
+<body>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Clients</a>
+        <a href="#">Contact</a>
+    </div>
+      
+    <div id="main">
+        <h2>Sidenav Push Example</h2>
+        <p>Click on the element below to open the side navigation menu, and push this content to the right.</p>
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+    </div>
+    <script>
+        function openNav(){
+            document.getElementById("mySidenav").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
+            //document.body.style.backgroundColor = "rgba(0,0,0,0.4)"  sideNav push with Opacity
+            //document.getElementById("mySidenav").style.width = "100%";  Full width
+        }
+        function closeNav(){
+           document.getElementById("mySidenav").style.width = "0";
+           document.getElementById("main").style.marginLeft= "0"
+            // document.body.style.backgroundColor = "white";  sideNav push with Opacity
+            //document.getElementById("mySidenav").style.width = "0"; removal full width
+        }
+    </script>
+</body>
+</html>
